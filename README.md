@@ -1,4 +1,4 @@
-## InfiniteInsights.com 🗺️🧑‍🍳📖🧬
+### InfiniteInsights.com 🗺️🧑‍🍳📖🧬
 InfiniteInsights.com is an upcoming blogging website crafted with the cutting-edge MERN stack (MongoDB, Express.js, React, Node.js). Envisioned as a creative haven, it empowers users to effortlessly pen down their thoughts and expertise, sharing unique insights with a global audience. Dive into a world of diverse content where users not only contribute their perspectives through compelling blog posts but also engage in a rich tapestry of ideas from others. Currently in the development phase, InfiniteInsights.com is poised to deliver a seamless and enriching experience for writers and readers alike. Stay tuned as we put the finishing touches on this platform, unlocking a space for limitless creativity and knowledge sharing. The journey of exploration and inspiration is about to begin – launching soon!
 
 🚀 **Launching Soon!** 🚀
