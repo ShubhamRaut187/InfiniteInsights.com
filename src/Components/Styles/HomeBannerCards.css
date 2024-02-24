@@ -1,0 +1,73 @@
+.hm_banner_card{
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid green; */
+    /* background-image: url('https://c0.wallpaperflare.com/preview/54/944/45/friends-friendship-travel-bike.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    /* z-index: 10; */
+}
+.hm_banner_card > div{
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.hm_banner_title{
+    margin: 0px auto 0px auto;
+    font-size: 54px;
+    color: white;
+    font-weight: 900;
+    text-align: left;
+    font-family: "Pacifico", cursive;
+}
+.hm_banner_btn{
+    width: 250px;
+    transition: all .5s ease;
+    color: #fff;
+    border: 3px solid white;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 17px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    border-radius: 4px;
+    /* font-family: "Pacifico", cursive; */
+    /* height: 35px; */
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.hm_banner_btn:hover{
+    color: white;
+    
+    background-color: #80a04b;
+    border: 3px solid #80a04b;
+}
+/* Media */
+/* Small Screens */
+@media screen and (min-width:320px) and (max-width:767px){
+    .hm_banner_card{
+        /* background-size: 500%; */
+        background-position: center;
+    }
+    .hm_banner_card > div{
+        align-items: center;
+        justify-content: center;
+    }
+    .hm_banner_title{
+        text-align: center;
+    }
+  }
+  
+  /* Medium Screens */
+  /* @media screen and (min-width:768px) and (max-width:1024px){
+      
+  } */

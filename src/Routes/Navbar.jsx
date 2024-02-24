@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import { useLocation } from 'react-router-dom';
 import { NavLink,Link } from 'react-router-dom';
 // import {HashLink as Link} from 'react-router-hash-link'
 import {CodeIcon,HamburgetMenuClose,HamburgetMenuOpen} from './Icon'
@@ -8,10 +8,20 @@ import './Styles/Navbar.css'
 function Navbar(props) {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
+    let location = useLocation();
+    let currentroute = location.pathname;
+   
     
-    
+    let navstyle_hm = {
+      backgroundColor: 'transparent',
+      marginBottom:'-110px'
+    }
+    let navstyle_nhm = {
+      backgroundColor: '#80a04b'
+    }
+
     return (
-        <div className="navbar">
+        <div className="navbar" style={currentroute==='/'?navstyle_hm:navstyle_nhm}>
             <div className="nav-container">
                 <Link to="/" className="nav-logo">
                     <span>infiniteinsights</span>
