@@ -30,7 +30,8 @@
     width: 250px;
     transition: all .5s ease;
     color: #fff;
-    border: 3px solid white;
+    border: 2px solid #607274;
+    /* border: none; */
     text-transform: uppercase;
     text-align: center;
     line-height: 1;
@@ -48,8 +49,8 @@
 .hm_banner_btn:hover{
     color: white;
     
-    background-color: #80a04b;
-    border: 3px solid #80a04b;
+    background-color: #607274;
+    border: 3px solid #607274;
 }
 /* Media */
 /* Small Screens */

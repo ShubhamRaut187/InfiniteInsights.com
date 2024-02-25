@@ -17,7 +17,8 @@ function Navbar(props) {
       marginBottom:'-110px'
     }
     let navstyle_nhm = {
-      backgroundColor: '#80a04b'
+      backgroundColor: '#607274',
+      boxShadow:'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;'
     }
 
     return (
