@@ -18,7 +18,7 @@ function Navbar(props) {
     }
     let navstyle_nhm = {
       backgroundColor: '#607274',
-      boxShadow:'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;'
+      boxShadow:'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px'
     }
 
     return (
@@ -70,7 +70,7 @@ function Navbar(props) {
               <Link
                 // exact
                 to="/auth"
-                smooth
+              
                 // activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
