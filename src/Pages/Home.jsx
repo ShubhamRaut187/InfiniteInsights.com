@@ -58,6 +58,14 @@ function Home(props) {
             Image:'https://cache.careers360.mobi/media/article_images/2022/10/14/stanford-university-list-of-top-scientists-india-china-featured-image.webp',
             Title:'Me and science'
         },
+        {
+            Image:'https://media.licdn.com/dms/image/D4D12AQHJHFGH5mQJXw/article-cover_image-shrink_720_1280/0/1669958544735?e=2147483647&v=beta&t=_PRJBB1_bdmzyrIeQVx4xepmUvlqT-b7WLIDMIyNkpY',
+            Title:'Gods Own Country'
+        },
+        {
+            Image:'https://c0.wallpaperflare.com/preview/434/853/163/india-lavasa-landscape.jpg',
+            Title:'Punes Private City'
+        }
 
     ]  
     return (

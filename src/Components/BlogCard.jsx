@@ -1,6 +1,8 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom'
 import './Styles/BlogCard.css'
 function BlogCard({title,image,subtitle}) {
+    let navigate = useNavigate();
     return (
         <div className='blog_card'>
             <div className='blog_card_img'>
@@ -16,7 +18,11 @@ function BlogCard({title,image,subtitle}) {
                 <i className="fa-regular fa-heart fa-lg" style={{color:'#e78895'}}></i>
                 <i className="fa-regular fa-paper-plane fa-lg" style={{color:'#e78895'}}></i>
                 </div>
-                <button className='blog_card_read_btn'>Read Blog</button>
+                <button className='blog_card_read_btn'
+                onClick={()=>{
+                    navigate(`/blogs/1`)
+                }}
+                >Read Blog</button>
             </div>
         </div>
     );
