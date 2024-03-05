@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Styles/Login.css'
 function Login(props) {
+    let navigate = useNavigate();
     return (
         <div>
             <div className='login_main'>
@@ -19,7 +21,11 @@ function Login(props) {
                         <label className='login_for_label'>Password</label>
                         <input type="password" placeholder='Password' className='login_form_input' />
                         <input type="submit" value='Login'className='login_form_btn'/>
-                        <p className='login_form_toogle_text'>Don't Have a Account ? Create One...</p>
+                        <p className='login_form_toogle_text' 
+                        onClick={()=>{
+                            navigate('/auth/signup')
+                        }}
+                        >Don't Have a Account ? Create One...</p>
                     </form>
                     <div className='login_outh_btn_div'>
                         <button>Login with google</button>

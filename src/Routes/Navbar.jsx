@@ -69,7 +69,7 @@ function Navbar(props) {
             <li className="nav-item">
               <Link
                 // exact
-                to="/auth"
+                to="/auth/login"
               
                 // activeClassName="active"
                 className="nav-links"

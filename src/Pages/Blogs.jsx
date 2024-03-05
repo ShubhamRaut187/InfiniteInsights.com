@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 
 // Components
 import FilterSearch from '../Components/FilterSearch';
@@ -6,6 +6,7 @@ import BlogCard from '../Components/BlogCard';
 
 import './Styles/Blogs.css'
 function Blogs(props) {
+    let [Blogs,SetBlogs] = useState([]);
     return (
         <div>
             <FilterSearch/>
