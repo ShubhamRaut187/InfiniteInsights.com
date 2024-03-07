@@ -23,7 +23,52 @@ function Home(props) {
         speed:500,
         waitForAnimate: false
       };
-      
+    
+    const settingstwo = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 820,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                initialSlide: 0
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                infinite: true,
+                slidesToScroll: 1,
+                initialSlide: 0
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                infinite: true,
+                slidesToScroll: 1
+              }
+            }
+          ]
+    };  
+
     // Banner Data Array
     const banners = [
         {
@@ -80,6 +125,42 @@ function Home(props) {
                     })
                 }
                 </Slider>
+            </div>
+            <div id='brand_info_main'>
+                <div className='brand_info'>
+                    <h1>Why Infinite Insights?</h1>
+                    <p>Infinite Insights stands as a guiding light of knowledge in the vast ocean of online content, offering a multifaceted platform for individuals 
+                    to share their thoughts, experiences, and expertise. What distinguishes it from the plethora of blogging sites is its expansive array of categories, 
+                    each delving into diverse realms of interest and inquiry.</p>
+                </div>
+                <div className='brand_categories'>
+                    <Slider {...settingstwo} className='home_category_slider'>
+                        <div className='home_category_slider_card'>
+                            <img src="https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vYzE0ZTQyMTYtMTMxMi00NGQ5LTkxNTktMTY3MTdhOTBkODc3LmpwZWc.webp" alt="sci" />
+                        </div>
+                        <div className='home_category_slider_card'>
+                            <img src="https://t3.ftcdn.net/jpg/03/74/73/78/360_F_374737839_VsxlmnN7soqOOOFFzy5kfE9H6PFMCkPX.jpg" alt="sci" />
+                        </div>
+                        <div className='home_category_slider_card'>
+                            <img src="https://marketplace.canva.com/EAFUIlmaRoo/1/0/1600w/canva-gray-blue-minimalist-science-molecular-logo-design-YHz6z_pbldQ.jpg" alt="sci" />
+                        </div>
+                        <div className='home_category_slider_card'>
+                            <img src="https://static.vecteezy.com/system/resources/previews/000/659/844/original/community-logo-vector.jpg" alt="sci" />
+                        </div>
+                        <div className='home_category_slider_card'>
+                            <img src="https://img.freepik.com/premium-vector/hand-drawn-culture-logo-design_23-2149857658.jpg" alt="sci" />
+                        </div>
+                        <div className='home_category_slider_card'>
+                            <img src="https://i.pinimg.com/originals/b4/7b/fb/b47bfbcd716ecdc348335e9928108a9c.jpg" alt="history" />
+                        </div>
+                        <div className='home_category_slider_card'>
+                            <img src="https://t4.ftcdn.net/jpg/03/02/12/83/360_F_302128359_q6aCwgAvdYZBPF4XSwxXddLPE0h3Kor1.jpg" alt="history" />
+                        </div>
+                        <div className='home_category_slider_card'>
+                            <img src="https://static.vecteezy.com/system/resources/previews/009/465/513/original/politics-typography-design-logo-creative-minimalist-policy-logo-tie-design-concept-logo-design-template-vector.jpg" alt="history" />
+                        </div>
+                    </Slider>
+                </div>
             </div>
         </div>
     );
