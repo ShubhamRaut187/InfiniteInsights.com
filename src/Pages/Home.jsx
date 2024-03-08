@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 
 // React Slick
 import Slider from "react-slick";
@@ -113,6 +113,7 @@ function Home(props) {
         }
 
     ]  
+
     return (
         <div>
             <div className='hm_banner_parent'>
@@ -126,6 +127,10 @@ function Home(props) {
                 }
                 </Slider>
             </div>
+            <div id='brand_info_div'>
+                   <h1>What is Infinite Insights ?</h1>
+                   <p><span className='starting_letter'>W</span>elcome to InfiniteInsights.com, your gateway to a world of diverse perspectives and boundless knowledge. We are a dynamic multi-user blogging platform where readers can immerse themselves in a rich tapestry of content spanning a multitude of categories. Whether you're passionate about sports, politics, travel, food, science and tech, community, culture, or current events, our platform offers something for everyone. Explore captivating blogs authored by talented writers from across the globe, each offering unique insights and thought-provoking commentary. But InfiniteInsights isn't just about consuming content – it's about fostering a community of creators. Join us in sharing your own voice and experiences through publishing your blogs, connecting with readers around the world, and contributing to the global conversation. Embrace the infinite possibilities of knowledge and inspiration with InfiniteInsights.com.</p>
+                </div>
             <div id='brand_info_main'>
                 <div className='brand_info'>
                     <h1>Why Infinite Insights?</h1>
