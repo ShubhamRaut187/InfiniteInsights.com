@@ -114,6 +114,10 @@ function Home(props) {
         {
             Image:'https://media.licdn.com/dms/image/D4D12AQHJHFGH5mQJXw/article-cover_image-shrink_720_1280/0/1669958544735?e=2147483647&v=beta&t=_PRJBB1_bdmzyrIeQVx4xepmUvlqT-b7WLIDMIyNkpY',
             Title:'Gods Own Country'
+        },
+        {
+            Image:'https://blog.untravel.com/wp-content/uploads/2017/11/main-1.jpg',
+            Title:'Rajasthans Camel Safari'
         }
 
     ]  
