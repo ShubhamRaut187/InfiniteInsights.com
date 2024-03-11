@@ -172,6 +172,9 @@ function Home(props) {
                         <div className='home_category_slider_card'>
                             <img src="https://static.vecteezy.com/system/resources/previews/009/465/513/original/politics-typography-design-logo-creative-minimalist-policy-logo-tie-design-concept-logo-design-template-vector.jpg" alt="history" />
                         </div>
+                        <div className='home_category_slider_card'>
+                            <img src="https://static.vecteezy.com/system/resources/previews/009/465/513/original/politics-typography-design-logo-creative-minimalist-policy-logo-tie-design-concept-logo-design-template-vector.jpg" alt="history" />
+                        </div>
                     </Slider>
                 </div>
             </div>
