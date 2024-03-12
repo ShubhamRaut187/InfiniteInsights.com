@@ -1,9 +1,46 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import ModalComp from '../Components/Modal';
+
 import './Styles/Signup.css'
+
+
 function Signup(props) {
     let navigate = useNavigate();
+    
+     // States for user data
+     let [name,Setname] = useState(null);
+     let [email,Setemail] = useState(null);
+     let [phone,Setphone] = useState(null);
+     let [avatar,Setavatar] = useState(null);
+     let [password,Setpassword] = useState(null);
+     let [bio,Setbio] = useState(null);
+     
+     let [modalopen,Setmodalopen] = useState(false);
+     let [alert,Setalert] = useState(null);
+     let [message,Setmessage] = useState(null);
+
+     const handleOpen = (alert,message) => {
+        Setalert(alert);
+        Setmessage(message);
+        Setmodalopen(true);
+     };
+     
+     const handleSubmit = async(e) => {
+        e.preventDefault();
+        if(!name || !email || !phone || !password || !bio){
+            handleOpen('Some fields are missing...!','All the fields below are mandatory.');
+            return;
+        }
+        else{
+            handleOpen('all good','all good')
+            // return
+        }
+    } 
+
+    
     return (
+        <>
         <div>
         <div className='signup_main'>
             <div className='signup_div_one'>
@@ -15,19 +52,29 @@ function Signup(props) {
                     <h1>Signup</h1>
                     <p>Add your details, so we know you well. A general tip a ideal password has 8 characters and must include atleast 1 number,special character, uppercase character, lowercase character.</p>
                 </div>
-                <form className='signup_form_div'>
+                <form className='signup_form_div' onSubmit={handleSubmit}>
                 <label className='signup_for_label'>Name</label>
-                    <input type="text" placeholder='Name'className='signup_form_input'/>
+                    <input type="text" placeholder='Name'className='signup_form_input' onChange={(e)=>{
+                        Setname(e.target.value)
+                    }}/>
                     <label className='signup_for_label'>Email</label>
-                    <input type="email" placeholder='Email'className='signup_form_input'/>
+                    <input type="email" placeholder='Email'className='signup_form_input'  onChange={(e)=>{
+                        Setemail(e.target.value)
+                    }}/>
                     <label className='signup_for_label'>Phone</label>
-                    <input type="number" placeholder='Phone'className='signup_form_input'/>
+                    <input type="number" placeholder='Phone'className='signup_form_input'  onChange={(e)=>{
+                        Setphone(e.target.value)
+                    }}/>
                     <label className='signup_for_label'>Avatar</label>
                     <input type="file" className='signup_form_input_file'/>
                     <label className='signup_for_label'>Password</label>
-                    <input type="password" placeholder='Password' className='signup_form_input' />
+                    <input type="password" placeholder='Password' className='signup_form_input'  onChange={(e)=>{
+                        Setpassword(e.target.value)
+                    }}/>
                     <label className='signup_for_label'>Describe Yourself</label>
-                    <textarea className='signup_form_input_textarea' cols="30" rows="10"></textarea>
+                    <textarea className='signup_form_input_textarea' cols="30" rows="10"  onChange={(e)=>{
+                        Setbio(e.target.value)
+                    }}></textarea>
                     <input type="submit" value='Signup'className='signup_form_btn'/>
                     <p className='signup_form_toogle_text' 
                     onClick={()=>{
@@ -40,7 +87,12 @@ function Signup(props) {
                 </div>
             </div>
         </div>
+       
     </div>
+    {
+        !modalopen ? <></> : <ModalComp alert={alert} message={message} modalopen={modalopen} Setmodalopen={Setmodalopen}/> 
+    }
+    </>
     );
 }
 
