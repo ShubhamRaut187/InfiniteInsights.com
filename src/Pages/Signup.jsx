@@ -26,41 +26,9 @@ function Signup(props) {
         Setmessage(message);
         Setmodalopen(true);
      };
-     
-    //  Function to upload image to cloudinary
-     const uploadImage = async() => {
-        const data = new FormData();
-        data.append('file',avatar);
-        data.append('upload_preset','Infiniteinsights_user');
-        data.append('cloud_name','dvplmrulx');
-        
-        try {
-            let result = await fetch(`https://api.cloudinary.com/v1_1/dvplmrulx/image/upload`,{
-                method:'POST',
-                body:data
-            });
-            let response = await result.json();
-            console.log(response);
-            return response.secure_url;
-        } catch (error) {
-            console.log(error);
-            return false;
-        }
-     }
 
-    //  Function to handle signup form
-     const handleSubmit = async(e) => {
-        e.preventDefault();
-        if(!name || !email || !phone || !password || !bio || !avatar){
-            handleOpen('Some fields are missing...!','All the fields below are mandatory.');
-            return;
-        }
-        let image_url = uploadImage();
-        if(!image_url){
-            handleOpen('Failed to upload image...!','Failed to upload image please try agian.');
-            return
-        }
-
+    //  Function to add user to db
+     const addUser = async(url) => {
         try {
             let result = await fetch(`http://localhost:8000/auth/v1/signup`,{
                 method:'POST',
@@ -71,16 +39,56 @@ function Signup(props) {
                     Name:name,
                     Email:email,
                     Password:password,
-                    Avatar:avatar,
-                    Bio:bio
+                    Avatar:url,
+                    Bio:bio,
+                    Phone:phone
                 })
             });
             let response = await result.json();
+            if(response.Message === 'Signup Successful...!'){
+                handleOpen('Signup Successful','Congratulations you have successfully signed up.')
+            }
+            else{
+                handleOpen('Something went wrong',response.Message);
+            }
             console.log(response);    
         } catch (error) {
             console.log(error);
             handleOpen('Failed to signup...!','Something went wrong please try again.')
         }
+     }
+
+    //  Function to upload image to cloudinary
+     const uploadImage = async() => {
+        const data = new FormData();
+        data.append('file',avatar);
+        data.append('upload_preset','Infiniteinsights_user');
+        data.append('cloud_name','dvplmrulx');
+      
+        fetch(`https://api.cloudinary.com/v1_1/dvplmrulx/image/upload`,{
+            method:'POST',
+            body:data
+        }).then((response)=>{
+            return response.json();
+        }).then((response)=>{
+            console.log(response);
+            addUser(response.secure_url);
+        }).catch((error)=>{
+            console.log(error);
+            handleOpen('Failed to upload image','Failed to upload your image please try again.')
+        })
+    }
+    
+     //  Function to handle signup form
+     const handleSubmit = async(e) => {
+        e.preventDefault();
+        if(!name || !email || !phone || !password || !bio || !avatar){
+            handleOpen('Some fields are missing...!','All the fields below are mandatory.');
+            return;
+        }
+        uploadImage();
+
+       
     } 
 
     return (
