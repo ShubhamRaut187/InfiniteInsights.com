@@ -20,25 +20,69 @@ function Signup(props) {
      let [alert,Setalert] = useState(null);
      let [message,Setmessage] = useState(null);
 
+    //  Function to hadle modal open
      const handleOpen = (alert,message) => {
         Setalert(alert);
         Setmessage(message);
         Setmodalopen(true);
      };
      
+    //  Function to upload image to cloudinary
+     const uploadImage = async() => {
+        const data = new FormData();
+        data.append('file',avatar);
+        data.append('upload_preset','Infiniteinsights_user');
+        data.append('cloud_name','dvplmrulx');
+        
+        try {
+            let result = await fetch(`https://api.cloudinary.com/v1_1/dvplmrulx/image/upload`,{
+                method:'POST',
+                body:data
+            });
+            let response = await result.json();
+            console.log(response);
+            return response.secure_url;
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
+     }
+
+    //  Function to handle signup form
      const handleSubmit = async(e) => {
         e.preventDefault();
-        if(!name || !email || !phone || !password || !bio){
+        if(!name || !email || !phone || !password || !bio || !avatar){
             handleOpen('Some fields are missing...!','All the fields below are mandatory.');
             return;
         }
-        else{
-            handleOpen('all good','all good')
-            // return
+        let image_url = uploadImage();
+        if(!image_url){
+            handleOpen('Failed to upload image...!','Failed to upload image please try agian.');
+            return
+        }
+
+        try {
+            let result = await fetch(`http://localhost:8000/auth/v1/signup`,{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                    Name:name,
+                    Email:email,
+                    Password:password,
+                    Avatar:avatar,
+                    Bio:bio
+                })
+            });
+            let response = await result.json();
+            console.log(response);    
+        } catch (error) {
+            console.log(error);
+            handleOpen('Failed to signup...!','Something went wrong please try again.')
         }
     } 
 
-    
     return (
         <>
         <div>
@@ -66,7 +110,9 @@ function Signup(props) {
                         Setphone(e.target.value)
                     }}/>
                     <label className='signup_for_label'>Avatar</label>
-                    <input type="file" className='signup_form_input_file'/>
+                    <input type="file" className='signup_form_input_file' onChange={(e)=>{
+                        Setavatar(e.target.files[0])
+                    }}/>
                     <label className='signup_for_label'>Password</label>
                     <input type="password" placeholder='Password' className='signup_form_input'  onChange={(e)=>{
                         Setpassword(e.target.value)
