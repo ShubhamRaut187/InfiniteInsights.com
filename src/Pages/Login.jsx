@@ -1,4 +1,5 @@
 import React,{useState}from 'react';
+import Titles from '../Components/Titles';
 import { useNavigate } from 'react-router-dom';
 import './Styles/Login.css'
 function Login(props) {
@@ -12,6 +13,7 @@ function Login(props) {
 
     return (
         <div>
+            <Titles title={'Login Account'}/>
             <div className='login_main'>
                 <div className='login_div_one'>
                     <h1>Welocme Back to Infinte Insights</h1>
