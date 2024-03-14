@@ -5,7 +5,7 @@ import './Styles/LoadingComp.css'
 function LoadingComp({message}) {
     return (
         <div className='loadingcomp_main'>
-            <CircularProgress sx={{color:'e78895'}}/>
+            <CircularProgress sx={{color:'#e78895'}}/>
             <h2>{message}...</h2>
         </div>
     );
