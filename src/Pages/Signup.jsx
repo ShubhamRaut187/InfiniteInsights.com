@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import ModalComp from '../Components/Modal';
 import LoadingComp from '../Components/LoadingComp';
+import Titles from '../Components/Titles';
 import './Styles/Signup.css'
 
 
@@ -100,6 +101,7 @@ function Signup(props) {
 
     return (
         <>
+        <Titles title={'Signup Account'}/>
         <div>
         <div className='signup_main'>
             <div className='signup_div_one'>
