@@ -118,6 +118,10 @@ function Home(props) {
         {
             Image:'https://blog.untravel.com/wp-content/uploads/2017/11/main-1.jpg',
             Title:'Rajasthans Camel Safari'
+        },
+        {
+            Image:'https://wallpapers.com/images/hd/happy-holi-hd-massive-crowd-5gxy49d2oesx5yv9.jpg',
+            Title:'Holi @ Vrindavan'
         }
 
     ]  
