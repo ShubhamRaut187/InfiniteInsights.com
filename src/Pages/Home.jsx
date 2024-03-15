@@ -122,6 +122,10 @@ function Home(props) {
         {
             Image:'https://wallpapers.com/images/hd/happy-holi-hd-massive-crowd-5gxy49d2oesx5yv9.jpg',
             Title:'Holi @ Vrindavan'
+        },
+        {
+            Image:'https://wallpapers.com/images/hd/happy-holi-hd-massive-crowd-5gxy49d2oesx5yv9.jpg',
+            Title:'Holi @ Vrindavan'
         }
 
     ]  
