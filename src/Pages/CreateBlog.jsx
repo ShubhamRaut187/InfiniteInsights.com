@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Styles/CreateBlog.css'
 function CreateBlog(props) {
+    let [title,Settitle] = useState(null);
     return (
         <div className='create_blog_main'>
             <div className='create_blog_form_div'>
